@@ -9,8 +9,6 @@ use App\Models\Enums\PirepState;
 use Illuminate\Support\Facades\DB;
 class TopPilot extends Model
 {
-    protected $table = 'users'; // Use the correct table name
-
     public function pireps()
     {
         return $this->hasMany(Pirep::class, 'pilot_id');
