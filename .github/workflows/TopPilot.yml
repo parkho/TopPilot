@@ -20,4 +20,4 @@ jobs:
       with:
         name: 'Top Pilot'
         artifacts: "../TopPilot.zip"
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }} 
