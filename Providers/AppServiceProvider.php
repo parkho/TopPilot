@@ -44,7 +44,7 @@ class AppServiceProvider extends ServiceProvider
     public function registerLinks(): void
     {
         // Show this link if logged in
-        // $this->moduleSvc->addFrontendLink('TopPilot', '/toppilot', '', $logged_in=true);
+        $this->moduleSvc->addFrontendLink('TopPilot', '/toppilot', '', $logged_in=true);
 
         // Admin links:
         $this->moduleSvc->addAdminLink('TopPilot', '/admin/toppilot');
