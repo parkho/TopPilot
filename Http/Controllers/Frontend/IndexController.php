@@ -9,19 +9,9 @@ use App\Models\Pirep;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Modules\TopPilot\Models\TopPilot;
-/**
- * Class $CLASS$
- * @package 
- */
+
 class IndexController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @param Request $request
-     *
-     * @return mixed
-     */
     public function index(Request $request, $interval = null)
     {
         $Day = Carbon::now()->day;
@@ -83,70 +73,5 @@ class IndexController extends Controller
                                                 // 'resultbrYear',                                                                          
                                                 )
                                             );
-    }
-
-      /**
-     * Show the form for creating a new resource.
-     *
-     * @param Request $request
-     *
-     * @return mixed
-     */
-    public function create(Request $request)
-    {
-        return view('toppilot::create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param Request $request
-     *
-     * @return mixed
-     */
-    public function store(Request $request)
-    {
-    }
-
-    /**
-     * Show the specified resource.
-     *
-     * @param Request $request
-     *
-     * @return mixed
-     */
-    public function show(Request $request)
-    {
-        return view('toppilot::show');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param Request $request
-     *
-     * @return mixed
-     */
-    public function edit(Request $request)
-    {
-        return view('toppilot::edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param Request $request
-     */
-    public function update(Request $request)
-    {
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param Request $request
-     */
-    public function destroy(Request $request)
-    {
     }
 }
