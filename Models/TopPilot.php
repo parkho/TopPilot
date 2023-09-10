@@ -9,11 +9,6 @@ use App\Models\Enums\PirepState;
 use Illuminate\Support\Facades\DB;
 class TopPilot extends Model
 {
-    public function pireps()
-    {
-        return $this->hasMany(Pirep::class, 'pilot_id');
-    }
-
     public function getTopFlightTimesForDay()
     {
             $start = Carbon::now()->startOfDay();
