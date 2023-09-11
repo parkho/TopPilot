@@ -10,9 +10,9 @@
 </div>
 <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <button class="nav-link active mr-1" id="flighttime-tab" data-toggle="tab" data-target="#flighttime" type="button" role="tab" aria-controls="nav-flighttime" aria-selected="true">Top Pilots Flight Time</button>
-    <button class="nav-link mr-1" id="distance-tab" data-toggle="tab" data-target="#distance" type="button" role="tab" aria-controls="nav-distance" aria-selected="false">Top Pilots Distance</button>
-    <button class="nav-link mr-1" id="nav-landingrate-tab" data-toggle="tab" data-target="#landingrate" type="button" role="tab" aria-controls="nav-landingrate" aria-selected="false">Top Pilots Landing Rate</button>
+    <button class="nav-link active mr-1" id="flighttime-tab" data-toggle="tab" data-target="#flighttime" type="button" role="tab" aria-controls="nav-flighttime" aria-selected="true">Top Pilots Best Flight Time</button>
+    <button class="nav-link mr-1" id="distance-tab" data-toggle="tab" data-target="#distance" type="button" role="tab" aria-controls="nav-distance" aria-selected="false">Top Pilots Best Distance</button>
+    <button class="nav-link mr-1" id="nav-landingrate-tab" data-toggle="tab" data-target="#landingrate" type="button" role="tab" aria-controls="nav-landingrate" aria-selected="false">Top Pilots Best Landing Rate</button>
     <button class="nav-link mr-1" id="nav-bestrevenue-tab" data-toggle="tab" data-target="#bestrevenue" type="button" role="tab" aria-controls="nav-bestrevenue" aria-selected="false">Top Pilots Best Revenue</button>
   </div>
 </nav>
