@@ -21,7 +21,9 @@
                         <thead>
                             <tr>
                                 <th>Rank</th>
+                                <th>Pilot ID</th>
                                 <th>Name</th>
+                                <th>Current Location</th>
                                 <th>Flight Time</th>
                             </tr>
                         </thead>
@@ -29,7 +31,9 @@
                         @foreach($resultftDay as $res)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
+                                    <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                     <td>{{ $res->user->name_private }}</td>
+                                    <td>{{ $res->user->curr_airport_id }}</td>
                                     <td>@minutestotime($res->totaltime)</td>
                                 </tr>
                             @endforeach
@@ -44,7 +48,9 @@
                         <thead>
                             <tr>
                                 <th>Rank</th>
+                                <th>Pilot ID</th>
                                 <th>Name</th>
+                                <th>Current Location</th>
                                 <th>Flight Time</th>
                             </tr>
                         </thead>
@@ -52,7 +58,9 @@
                             @foreach($resultftWeek as $res)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
+                                    <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                     <td>{{ $res->user->name_private }}</td>
+                                    <td>{{ $res->user->curr_airport_id }}</td>
                                     <td>@minutestotime($res->totaltime)</td>
                                 </tr>
                             @endforeach
@@ -61,13 +69,15 @@
                 </div>
             </div>
             <div class="card col-md-12 col-lg-12">
-                <div class="card-header mt-3 mb-3">In {{ $Month }}</div>
+                <div class="card-header mt-3 mb-3">In {{ $Month }}, {{ $Year }}</div>
                 <div class="card-body">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>Rank</th>
+                                <th>Pilot ID</th>
                                 <th>Name</th>
+                                <th>Current Location</th>
                                 <th>Flight Time</th>
                             </tr>
                         </thead>
@@ -75,7 +85,9 @@
                             @foreach($resultftMonth as $res)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
+                                    <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                     <td>{{ $res->user->name_private }}</td>
+                                    <td>{{ $res->user->curr_airport_id }}</td>
                                     <td>@minutestotime($res->totaltime)</td>
                                 </tr>
                             @endforeach
@@ -84,13 +96,15 @@
                 </div>
             </div>
             <div class="card col-md-12 col-lg-12">
-                <div class="card-header mt-3 mb-3">In {{ $Year }}</div>
+                <div class="card-header mt-3 mb-3">In Year {{ $Year }}</div>
                 <div class="card-body">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>Rank</th>
+                                <th>Pilot ID</th>
                                 <th>Name</th>
+                                <th>Current Location</th>
                                 <th>Flight Time</th>
                             </tr>
                             @if(!$resultftYear)
@@ -101,7 +115,9 @@
                                 @foreach($resultftYear as $res)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
+                                        <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                         <td>{{ $res->user->name_private }}</td>
+                                        <td>{{ $res->user->curr_airport_id }}</td>
                                         <td>@minutestotime($res->totaltime)</td>
                                     </tr>
                                 @endforeach                            
@@ -115,13 +131,15 @@
                 </div>
             </div>
             <div class="card col-md-12 col-lg-12">
-                <div class="card-header mt-3 mb-3">In {{ $LastYear }}</div>
+                <div class="card-header mt-3 mb-3">In Year {{ $LastYear }}</div>
                 <div class="card-body">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>Rank</th>
+                                <th>Pilot ID</th>
                                 <th>Name</th>
+                                <th>Current Location</th>
                                 <th>Flight Time</th>
                             </tr>
                             @if(!$resultftLastYear)
@@ -132,7 +150,9 @@
                                 @foreach($resultftLastYear as $res)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
+                                        <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                         <td>{{ $res->user->name_private }}</td>
+                                        <td>{{ $res->user->curr_airport_id }}</td>
                                         <td>@minutestotime($res->totaltime)</td>
                                     </tr>
                                 @endforeach                            
@@ -156,7 +176,9 @@
                         <thead>
                             <tr>
                                 <th>Rank</th>
+                                <th>Pilot ID</th>
                                 <th>Name</th>
+                                <th>Current Location</th>
                                 <th>Distance</th>
                             </tr>
                         </thead>
@@ -169,7 +191,9 @@
                                 @foreach($resultdDay as $res)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
+                                        <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                         <td>{{ $res->user->name_private }}</td>
+                                        <td>{{ $res->user->curr_airport_id }}</td>
                                         <td>{{ floor($res->totaldistance) }} NM</td>
                                     </tr>
                                 @endforeach                            
@@ -185,7 +209,9 @@
                         <thead>
                             <tr>
                                 <th>Rank</th>
+                                <th>Pilot ID</th>
                                 <th>Name</th>
+                                <th>Current Location</th>
                                 <th>Distance</th>
                             </tr>
                         </thead>
@@ -198,7 +224,9 @@
                                 @foreach($resultdDay as $res)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
+                                        <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                         <td>{{ $res->user->name_private }}</td>
+                                        <td>{{ $res->user->curr_airport_id }}</td>
                                         <td>{{ floor($res->totaldistance) }} NM</td>
                                     </tr>
                                 @endforeach                            
@@ -214,7 +242,9 @@
                         <thead>
                             <tr>
                                 <th>Rank</th>
+                                <th>Pilot ID</th>
                                 <th>Name</th>
+                                <th>Current Location</th>
                                 <th>Flight Time</th>
                             </tr>
                         </thead>
@@ -222,7 +252,9 @@
                             @foreach($resultdMonth as $res)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
+                                    <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                     <td>{{ $res->user->name_private }}</td>
+                                    <td>{{ $res->user->curr_airport_id }}</td>
                                     <td>{{ floor($res->totaldistance) }} NM</td>
                                 </tr>
                             @endforeach
@@ -237,7 +269,9 @@
                         <thead>
                             <tr>
                                 <th>Rank</th>
+                                <th>Pilot ID</th>
                                 <th>Name</th>
+                                <th>Current Location</th>
                                 <th>Distance</th>
                             </tr>
                         </thead>
@@ -250,7 +284,9 @@
                                 @foreach($resultdYear as $res)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
+                                        <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                         <td>{{ $res->user->name_private }}</td>
+                                        <td>{{ $res->user->curr_airport_id }}</td>                              
                                         <td>{{ floor($res->totaldistance) }} NM</td>
                                     </tr>
                                 @endforeach                            
@@ -266,7 +302,9 @@
                         <thead>
                             <tr>
                                 <th>Rank</th>
+                                <th>Pilot ID</th>
                                 <th>Name</th>
+                                <th>Current Location</th>
                                 <th>Flight Time</th>
                             </tr>
                             @if(!$resultdLastYear)
@@ -277,7 +315,9 @@
                                 @foreach($resultdLastYear as $res)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
+                                        <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                         <td>{{ $res->user->name_private }}</td>
+                                        <td>{{ $res->user->curr_airport_id }}</td>
                                         <td>{{ floor($res->totaldistance) }} NM</td>
                                     </tr>
                                 @endforeach                            
@@ -301,63 +341,160 @@
                         <thead>
                             <tr>
                                 <th>Rank</th>
+                                <th>Pilot ID</th>
                                 <th>Name</th>
+                                <th>Current Location</th>
                                 <th>Landing Rate</th>
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            @if(!$resultlrDay)
+                                    
+                                    <tr><td colspan="3" align="center">No Records Found</td></tr>
+                                
+                            @else 
+                                @foreach($resultlrDay as $res)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
+                                        <td>{{ $res->user->name_private }}</td>
+                                        <td>{{ $res->user->curr_airport_id }}</td>
+                                        <td>{{ floor($res->landing_rate) }} fps</td>
+                                    </tr>
+                                @endforeach                            
+                            @endif
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="card col-md-12 col-lg-12">
-                <div class="card-header mt-3 mb-3">Today - {{ $DayName }}, {{ $Month }} {{ $Day }}, {{ $Year }}</div>
+                <div class="card-header mt-3 mb-3">Week {{ $Week }} of {{ $Month }}, {{ $Year }}</div>
                 <div class="card-body">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>Rank</th>
+                                <th>Pilot ID</th>
                                 <th>Name</th>
+                                <th>Current Location</th>
                                 <th>Landing Rate</th>
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            @if(!$resultlrWeek)
+                                    
+                                    <tr><td colspan="3" align="center">No Records Found</td></tr>
+                                
+                            @else 
+                                @foreach($resultlrWeek as $res)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
+                                        <td>{{ $res->user->name_private }}</td>
+                                        <td>{{ $res->user->curr_airport_id }}</td>
+                                        <td>{{ floor($res->landing_rate) }} fps</td>
+                                    </tr>
+                                @endforeach                            
+                            @endif
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="card col-md-12 col-lg-12">
-                <div class="card-header mt-3 mb-3">This Month - {{ $Month }}</div>
+                <div class="card-header mt-3 mb-3">In {{ $Month }}, {{ $Year }}</div>
                 <div class="card-body">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>Rank</th>
+                                <th>Pilot ID</th>
                                 <th>Name</th>
+                                <th>Current Location</th>
                                 <th>Landing Rate</th>
                             </tr>
                         </thead>
                         <tbody>
-                            
+                                @if(!$resultlrMonth)
+                                    
+                                    <tr><td colspan="3" align="center">No Records Found</td></tr>
+                                
+                                @else 
+                                    @foreach($resultlrMonth as $res)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
+                                            <td>{{ $res->user->name_private }}</td>
+                                            <td>{{ $res->user->curr_airport_id }}</td>
+                                            <td>{{ floor($res->landing_rate) }} fps</td>
+                                        </tr>
+                                    @endforeach                            
+                                @endif
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="card col-md-12 col-lg-12">
-                <div class="card-header mt-3 mb-3">This Year - {{ $Year }}</div>
+                <div class="card-header mt-3 mb-3">This Year {{ $Year }}</div>
                 <div class="card-body">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>Rank</th>
+                                <th>Pilot ID</th>
                                 <th>Name</th>
+                                <th>Current Location</th>
                                 <th>Landing Rate</th>
                             </tr>
                         </thead>
                         <tbody>
-                            
+                                @if(!$resultlrYear)
+                                    
+                                    <tr><td colspan="3" align="center">No Records Found</td></tr>
+                                
+                                @else 
+                                    @foreach($resultlrYear as $res)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
+                                            <td>{{ $res->user->name_private }}</td>
+                                            <td>{{ $res->user->curr_airport_id }}</td>
+                                            <td>{{ floor($res->landing_rate) }} fps</td>
+                                        </tr>
+                                    @endforeach                            
+                                @endif
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card col-md-12 col-lg-12">
+                <div class="card-header mt-3 mb-3">In Year {{ $LastYear }}</div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Pilot ID</th>
+                                <th>Name</th>
+                                <th>Current Location</th>
+                                <th>Landing Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                @if(!$resultlrLastYear)
+                                    
+                                    <tr><td colspan="3" align="center">No Records Found</td></tr>
+                                
+                                @else 
+                                    @foreach($resultlrLastYear as $res)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
+                                            <td>{{ $res->user->name_private }}</td>
+                                            <td>{{ $res->user->curr_airport_id }}</td>
+                                            <td>{{ floor($res->landing_rate) }} fps</td>
+                                        </tr>
+                                    @endforeach                            
+                                @endif
                         </tbody>
                     </table>
                 </div>
@@ -373,47 +510,94 @@
                         <thead>
                             <tr>
                                 <th>Rank</th>
+                                <th>Pilot ID</th>
                                 <th>Name</th>
+                                <th>Current Location</th>
                                 <th>Best Revenue</th>
                             </tr>
                         </thead>
                         <tbody>
-                        
+                                @if(!$resultbrDay)
+                                <tr><td colspan="3" align="center">No Records Found</td></tr>
+                                @else 
+                                    @foreach($resultbrDay as $res)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td><a href="{{ route('frontend.users.show.public', [$res['user']['user_id']]) }}">{{ $res['user']['airline_code'] }}000{{ $res['user']['user_id'] }}</a></td>
+                                            <td>{{ $res['user']['name'] }}</td>
+                                            <td>{{ $res['user']['curr_airport_id'] }}</td>
+                                            <td>{{ money($res['total_balance'], $curr_unit) }}</td>
+                                        </tr>
+                                    @endforeach                            
+                                @endif
+
 
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="card col-md-12 col-lg-12">
-                <div class="card-header mt-3 mb-3">Today - {{ $DayName }}, {{ $Month }} {{ $Day }}, {{ $Year }}</div>
+                <div class="card-header mt-3 mb-3">Week {{ $Week }} of {{ $Month }}, {{ $Year }}</div>
                 <div class="card-body">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>Rank</th>
+                                <th>Pilot ID</th>
                                 <th>Name</th>
-                                <th>Landing Rate</th>
+                                <th>Current Location</th>
+                                <th>Best Revenue</th>
                             </tr>
                         </thead>
                         <tbody>
-                            
+                                @if(!$resultbrWeek)
+                                <tr><td colspan="3" align="center">No Records Found</td></tr>
+                                @else 
+                                    @foreach($resultbrWeek as $res)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td><a href="{{ route('frontend.users.show.public', [$res['user']['user_id']]) }}">{{ $res['user']['airline_code'] }}000{{ $res['user']['user_id'] }}</a></td>
+                                            <td>{{ $res['user']['name'] }}</td>
+                                            <td>{{ $res['user']['curr_airport_id'] }}</td>
+                                            <td>{{ money($res['total_balance'], $curr_unit) }}</td>
+                                        </tr>
+                                    @endforeach                            
+                                @endif
+
+
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="card col-md-12 col-lg-12">
-                <div class="card-header mt-3 mb-3">This Month - {{ $Month }}</div>
+                <div class="card-header mt-3 mb-3">In {{ $Month }}, {{ $Year }}</div>
                 <div class="card-body">
                 <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>Rank</th>
+                                <th>Pilot ID</th>
                                 <th>Name</th>
+                                <th>Current Location</th>
                                 <th>Best Revenue</th>
                             </tr>
                         </thead>
                         <tbody>
-                        
+                                @if(!$resultbrMonth)
+                                <tr><td colspan="3" align="center">No Records Found</td></tr>
+                                @else 
+                                    @foreach($resultbrMonth as $res)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td><a href="{{ route('frontend.users.show.public', [$res['user']['user_id']]) }}">{{ $res['user']['airline_code'] }}000{{ $res['user']['user_id'] }}</a></td>
+                                            <td>{{ $res['user']['name'] }}</td>
+                                            <td>{{ $res['user']['curr_airport_id'] }}</td>
+                                            <td>{{ money($res['total_balance'], $curr_unit) }}</td>
+                                        </tr>
+                                    @endforeach                            
+                                @endif
+
+
                         </tbody>
                     </table>
                 </div>
@@ -425,12 +609,28 @@
                         <thead>
                             <tr>
                                 <th>Rank</th>
+                                <th>Pilot ID</th>
                                 <th>Name</th>
+                                <th>Current Location</th>
                                 <th>Best Revenue</th>
                             </tr>
                         </thead>
                         <tbody>
-                        
+                                @if(!$resultbrYear)
+                                <tr><td colspan="3" align="center">No Records Found</td></tr>
+                                @else 
+                                    @foreach($resultbrYear as $res)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td><a href="{{ route('frontend.users.show.public', [$res['user']['user_id']]) }}">{{ $res['user']['airline_code'] }}000{{ $res['user']['user_id'] }}</a></td>
+                                            <td>{{ $res['user']['name'] }}</td>
+                                            <td>{{ $res['user']['curr_airport_id'] }}</td>
+                                            <td>{{ money($res['total_balance'], $curr_unit) }}</td>
+                                        </tr>
+                                    @endforeach                            
+                                @endif
+
+
                         </tbody>
                     </table>
                 </div>
@@ -442,26 +642,28 @@
                         <thead>
                             <tr>
                                 <th>Rank</th>
+                                <th>Pilot ID</th>
                                 <th>Name</th>
-                                <th>Flight Time</th>
+                                <th>Current Location</th>
+                                <th>Best Revenue</th>
                             </tr>
-                            @if(!$resultftLastYear)
-                                
-                                    <tr><td colspan="3" align="center">No Records Found</td></tr>
-                                
-                            @else 
-                                @foreach($resultftLastYear as $res)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $res->user->name_private }}</td>
-                                        <td>@minutestotime($res->totaltime)</td>
-                                    </tr>
-                                @endforeach                            
-                            @endif
-                                
                         </thead>
                         <tbody>
-                            
+                                @if(!$resultbrLastYear)
+                                <tr><td colspan="3" align="center">No Records Found</td></tr>
+                                @else 
+                                    @foreach($resultbrLastYear as $res)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td><a href="{{ route('frontend.users.show.public', [$res['user']['user_id']]) }}">{{ $res['user']['airline_code'] }}000{{ $res['user']['user_id'] }}</a></td>
+                                            <td>{{ $res['user']['name'] }}</td>
+                                            <td>{{ $res['user']['curr_airport_id'] }}</td>
+                                            <td>{{ money($res['total_balance'], $curr_unit) }}</td>
+                                        </tr>
+                                    @endforeach                            
+                                @endif
+
+
                         </tbody>
                     </table>
                 </div>
