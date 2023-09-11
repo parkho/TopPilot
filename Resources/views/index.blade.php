@@ -403,7 +403,7 @@
             <div class="card col-md-12 col-lg-12">
                 <div class="card-header mt-3 mb-3">In {{ $Month }}, {{ $Year }}</div>
                 <div class="card-body">
-                    <table class="table table-bordered">
+                    <table class="table table-bordered"> 
                         <thead>
                             <tr>
                                 <th>Rank</th>
