@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="row">
-    <div class="card col-md-4 col-lg-4 bg-secondary text-white">
+    <div class="card col-md-4 col-lg-4 bg-info text-white">
         <div class="card-header mt-3 mb-3">{{ config('toppilot.name') }} - By ParKho</div>
     </div>
 </div>
@@ -22,26 +22,34 @@
             <div class="card col-md-6 col-lg-6">
                 <div class="card-header mt-3 mb-3">Today - {{ $DayName }}, {{ $Month }} {{ $Day }}, {{ $Year }}</div>
                 <div class="card-body">
-                    <table class="table table-bordered">
+                    <table class="table mt-3">
                         <thead>
                             <tr>
-                                <th>Rank</th>
-                                <th>Pilot ID</th>
-                                <th>Name</th>
-                                <th>Current Location</th>
-                                <th>Flight Time</th>
+                               
+                                    <th>Rank</th>
+                                    <th>Pilot ID</th>
+                                    <th>Name</th>
+                                    <th>Current Location</th>
+                                    <th>Flight Time</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach($resultftDay as $res)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
-                                    <td>{{ $res->user->name_private }}</td>
-                                    <td>{{ $res->user->curr_airport_id }}</td>
-                                    <td class="text-success">@minutestotime($res->totaltime)</td>
-                                </tr>
-                            @endforeach
+                                @if($resultftDay->isEmpty())
+                                
+                                    <tr><td colspan="5" align="center">No Records Found</td></tr>
+                                
+                                @else 
+                                    @foreach($resultftDay as $res)
+                                            <tr>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
+                                                <td>{{ $res->user->name_private }}</td>
+                                                <td>{{ $res->user->curr_airport_id }}</td>
+                                                <td class="text-success">@minutestotime($res->totaltime)</td>
+                                            </tr>
+                                    @endforeach
+                                @endif
                         </tbody>
                     </table>
                 </div>
@@ -49,7 +57,7 @@
             <div class="card col-md-6 col-lg-6">
                 <div class="card-header mt-3 mb-3">Week {{ $Week }} of {{ $Month }}, {{ $Year }}</div>
                 <div class="card-body">
-                    <table class="table table-bordered">
+                    <table class="table mt-3">
                         <thead>
                             <tr>
                                 <th>Rank</th>
@@ -60,15 +68,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($resultftWeek as $res)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
-                                    <td>{{ $res->user->name_private }}</td>
-                                    <td>{{ $res->user->curr_airport_id }}</td>
-                                    <td class="text-success">@minutestotime($res->totaltime)</td>
-                                </tr>
-                            @endforeach
+                            @if($resultftWeek->isEmpty())
+                                
+                                    <tr><td colspan="5" align="center">No Records Found</td></tr>
+                                
+                            @else 
+                                @foreach($resultftWeek as $res)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
+                                        <td>{{ $res->user->name_private }}</td>
+                                        <td>{{ $res->user->curr_airport_id }}</td>
+                                        <td class="text-success">@minutestotime($res->totaltime)</td>
+                                    </tr>
+                                @endforeach
+                            @endif
                         </tbody>
                     </table>
                 </div>
@@ -76,7 +90,7 @@
             <div class="card col-md-6 col-lg-6">
                 <div class="card-header mt-3 mb-3">In {{ $Month }}, {{ $Year }}</div>
                 <div class="card-body">
-                    <table class="table table-bordered">
+                    <table class="table mt-3">
                         <thead>
                             <tr>
                                 <th>Rank</th>
@@ -87,15 +101,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($resultftMonth as $res)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
-                                    <td>{{ $res->user->name_private }}</td>
-                                    <td>{{ $res->user->curr_airport_id }}</td>
-                                    <td class="text-success">@minutestotime($res->totaltime)</td>
-                                </tr>
-                            @endforeach
+                            @if($resultftMonth->isEmpty())
+                                
+                                    <tr><td colspan="5" align="center">No Records Found</td></tr>
+                                
+                            @else 
+                                @foreach($resultftMonth as $res)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
+                                        <td>{{ $res->user->name_private }}</td>
+                                        <td>{{ $res->user->curr_airport_id }}</td>
+                                        <td class="text-success">@minutestotime($res->totaltime)</td>
+                                    </tr>
+                                @endforeach
+                            @endif
                         </tbody>
                     </table>
                 </div>
@@ -103,7 +123,7 @@
             <div class="card col-md-6 col-lg-6">
                 <div class="card-header mt-3 mb-3">In Year {{ $Year }}</div>
                 <div class="card-body">
-                    <table class="table table-bordered">
+                    <table class="table mt-3">
                         <thead>
                             <tr>
                                 <th>Rank</th>
@@ -112,9 +132,9 @@
                                 <th>Current Location</th>
                                 <th>Flight Time</th>
                             </tr>
-                            @if(!$resultftYear)
+                            @if($resultftYear->isEmpty())
                                 
-                                    <tr><td colspan="3" align="center">No Records Found</td></tr>
+                                    <tr><td colspan="5" align="center">No Records Found</td></tr>
                                 
                             @else 
                                 @foreach($resultftYear as $res)
@@ -138,7 +158,7 @@
             <div class="card col-md-12 col-lg-12">
                 <div class="card-header mt-3 mb-3">In Year {{ $LastYear }}</div>
                 <div class="card-body">
-                    <table class="table table-bordered">
+                    <table class="table mt-3">
                         <thead>
                             <tr>
                                 <th>Rank</th>
@@ -147,9 +167,9 @@
                                 <th>Current Location</th>
                                 <th>Flight Time</th>
                             </tr>
-                            @if(!$resultftLastYear)
+                            @if($resultftLastYear->isEmpty())
                                 
-                                    <tr><td colspan="3" align="center">No Records Found</td></tr>
+                                    <tr><td colspan="5" align="center">No Records Found</td></tr>
                                 
                             @else 
                                 @foreach($resultftLastYear as $res)
@@ -177,7 +197,7 @@
             <div class="card col-md-6 col-lg-6">
                 <div class="card-header mt-3 mb-3">Today - {{ $DayName }}, {{ $Month }} {{ $Day }}, {{ $Year }}</div>
                 <div class="card-body">
-                    <table class="table table-bordered">
+                    <table class="table mt-3">
                         <thead>
                             <tr>
                                 <th>Rank</th>
@@ -188,21 +208,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if(!$resultftLastYear)
+                                @if($resultdDay->isEmpty())
+                                        
+                                        <tr><td colspan="5" align="center">No Records Found</td></tr>
                                     
-                                    <tr><td colspan="3" align="center">No Records Found</td></tr>
-                                
-                            @else 
-                                @foreach($resultdDay as $res)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
-                                        <td>{{ $res->user->name_private }}</td>
-                                        <td>{{ $res->user->curr_airport_id }}</td>
-                                        <td class="text-success">{{ floor($res->totaldistance) }} NM</td>
-                                    </tr>
-                                @endforeach                            
-                            @endif
+                                @else 
+                                    @foreach($resultdDay as $res)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
+                                            <td>{{ $res->user->name_private }}</td>
+                                            <td>{{ $res->user->curr_airport_id }}</td>
+                                            <td class="text-success">{{ floor($res->totaldistance) }} NM</td>
+                                        </tr>
+                                    @endforeach                            
+                                @endif
                         </tbody>
                     </table>
                 </div>
@@ -210,7 +230,7 @@
             <div class="card col-md-6 col-lg-6">
                 <div class="card-header mt-3 mb-3">Week {{ $Week }} of {{ $Month }}, {{ $Year }}</div>
                 <div class="card-body">
-                    <table class="table table-bordered">
+                    <table class="table mt-3">
                         <thead>
                             <tr>
                                 <th>Rank</th>
@@ -221,12 +241,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @if(!$resultftLastYear)
+                            @if($resultdWeek->isEmpty())
                                     
-                                    <tr><td colspan="3" align="center">No Records Found</td></tr>
+                                    <tr><td colspan="5" align="center">No Records Found</td></tr>
                                 
                             @else 
-                                @foreach($resultdDay as $res)
+                                @foreach($resultdWeek as $res)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
@@ -243,7 +263,7 @@
             <div class="card col-md-6 col-lg-6">
                 <div class="card-header mt-3 mb-3">In {{ $Month }}, {{ $Year }}</div>
                 <div class="card-body">
-                    <table class="table table-bordered">
+                    <table class="table mt-3">
                         <thead>
                             <tr>
                                 <th>Rank</th>
@@ -254,15 +274,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($resultdMonth as $res)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
-                                    <td>{{ $res->user->name_private }}</td>
-                                    <td>{{ $res->user->curr_airport_id }}</td>
-                                    <td class="text-success">{{ floor($res->totaldistance) }} NM</td>
-                                </tr>
-                            @endforeach
+                            @if($resultdMonth->isEmpty())
+                                    
+                                    <tr><td colspan="5" align="center">No Records Found</td></tr>
+                                
+                            @else 
+                                @foreach($resultdMonth as $res)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
+                                        <td>{{ $res->user->name_private }}</td>
+                                        <td>{{ $res->user->curr_airport_id }}</td>
+                                        <td class="text-success">{{ floor($res->totaldistance) }} NM</td>
+                                    </tr>
+                                @endforeach
+                            @endif
                         </tbody>
                     </table>
                 </div>
@@ -270,7 +296,7 @@
             <div class="card col-md-6 col-lg-6">
                 <div class="card-header mt-3 mb-3">In Year {{ $Year }}</div>
                 <div class="card-body">
-                    <table class="table table-bordered">
+                    <table class="table mt-3">
                         <thead>
                             <tr>
                                 <th>Rank</th>
@@ -281,9 +307,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @if(!$resultdLastYear)
+                            @if($resultdYear->isEmpty())
                                     
-                                    <tr><td colspan="3" align="center">No Records Found</td></tr>
+                                    <tr><td colspan="5" align="center">No Records Found</td></tr>
                                 
                             @else 
                                 @foreach($resultdYear as $res)
@@ -303,7 +329,7 @@
             <div class="card col-md-12 col-lg-12">
                 <div class="card-header mt-3 mb-3">In Year {{ $LastYear }}</div>
                 <div class="card-body">
-                    <table class="table table-bordered">
+                    <table class="table mt-3">
                         <thead>
                             <tr>
                                 <th>Rank</th>
@@ -312,9 +338,9 @@
                                 <th>Current Location</th>
                                 <th>Flight Time</th>
                             </tr>
-                            @if(!$resultdLastYear)
+                            @if($resultdLastYear->isEmpty())
                                     
-                                    <tr><td colspan="3" align="center">No Records Found</td></tr>
+                                    <tr><td colspan="5" align="center">No Records Found</td></tr>
                                 
                             @else 
                                 @foreach($resultdLastYear as $res)
@@ -342,7 +368,7 @@
             <div class="card col-md-6 col-lg-6">
                 <div class="card-header mt-3 mb-3">Today - {{ $DayName }}, {{ $Month }} {{ $Day }}, {{ $Year }}</div>
                 <div class="card-body">
-                    <table class="table table-bordered">
+                    <table class="table mt-3">
                         <thead>
                             <tr>
                                 <th>Rank</th>
@@ -353,9 +379,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if(!$resultlrDay)
+                            @if($resultlrDay->isEmpty())
                                     
-                                    <tr><td colspan="3" align="center">No Records Found</td></tr>
+                                    <tr><td colspan="5" align="center">No Records Found</td></tr>
                                 
                             @else 
                                 @foreach($resultlrDay as $res)
@@ -375,7 +401,7 @@
             <div class="card col-md-6 col-lg-6">
                 <div class="card-header mt-3 mb-3">Week {{ $Week }} of {{ $Month }}, {{ $Year }}</div>
                 <div class="card-body">
-                    <table class="table table-bordered">
+                    <table class="table mt-3">
                         <thead>
                             <tr>
                                 <th>Rank</th>
@@ -386,9 +412,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if(!$resultlrWeek)
+                            @if($resultlrWeek->isEmpty())
                                     
-                                    <tr><td colspan="3" align="center">No Records Found</td></tr>
+                                    <tr><td colspan="5" align="center">No Records Found</td></tr>
                                 
                             @else 
                                 @foreach($resultlrWeek as $res)
@@ -408,7 +434,7 @@
             <div class="card col-md-6 col-lg-6">
                 <div class="card-header mt-3 mb-3">In {{ $Month }}, {{ $Year }}</div>
                 <div class="card-body">
-                    <table class="table table-bordered"> 
+                    <table class="table mt-3"> 
                         <thead>
                             <tr>
                                 <th>Rank</th>
@@ -419,9 +445,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                                @if(!$resultlrMonth)
+                                @if($resultlrMonth->isEmpty())
                                     
-                                    <tr><td colspan="3" align="center">No Records Found</td></tr>
+                                    <tr><td colspan="5" align="center">No Records Found</td></tr>
                                 
                                 @else 
                                     @foreach($resultlrMonth as $res)
@@ -430,7 +456,7 @@
                                             <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                             <td>{{ $res->user->name_private }}</td>
                                             <td>{{ $res->user->curr_airport_id }}</td>
-                                            <td>{{ floor($res->landing_rate) }} fps</td>
+                                            <td class="text-success">{{ floor($res->landing_rate) }} fps</td>
                                         </tr>
                                     @endforeach                            
                                 @endif
@@ -441,7 +467,7 @@
             <div class="card col-md-6 col-lg-6">
                 <div class="card-header mt-3 mb-3">This Year {{ $Year }}</div>
                 <div class="card-body">
-                    <table class="table table-bordered">
+                    <table class="table mt-3">
                         <thead>
                             <tr>
                                 <th>Rank</th>
@@ -452,9 +478,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                                @if(!$resultlrYear)
+                                @if($resultlrYear->isEmpty())
                                     
-                                    <tr><td colspan="3" align="center">No Records Found</td></tr>
+                                    <tr><td colspan="5" align="center">No Records Found</td></tr>
                                 
                                 @else 
                                     @foreach($resultlrYear as $res)
@@ -474,7 +500,7 @@
             <div class="card col-md-12 col-lg-12">
                 <div class="card-header mt-3 mb-3">In Year {{ $LastYear }}</div>
                 <div class="card-body">
-                    <table class="table table-bordered">
+                    <table class="table mt-3">
                         <thead>
                             <tr>
                                 <th>Rank</th>
@@ -485,9 +511,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                                @if(!$resultlrLastYear)
+                                @if($resultlrLastYear->isEmpty())
                                     
-                                    <tr><td colspan="3" align="center">No Records Found</td></tr>
+                                    <tr><td colspan="5" align="center">No Records Found</td></tr>
                                 
                                 @else 
                                     @foreach($resultlrLastYear as $res)
@@ -511,7 +537,7 @@
             <div class="card col-md-6 col-lg-6">
                 <div class="card-header mt-3 mb-3">Today - {{ $DayName }}, {{ $Month }} {{ $Day }}, {{ $Year }}</div>
                 <div class="card-body">
-                    <table class="table table-bordered">
+                    <table class="table mt-3">
                         <thead>
                             <tr>
                                 <th>Rank</th>
@@ -523,20 +549,20 @@
                         </thead>
                         <tbody>
                                 @if(!$resultbrDay)
-                                <tr><td colspan="3" align="center">No Records Found</td></tr>
+
+                                    <tr><td colspan="5" align="center">No Records Found</td></tr>
+
                                 @else 
                                     @foreach($resultbrDay as $res)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td><a href="{{ route('frontend.users.show.public', [$res['user']['user_id']]) }}">{{ $res['user']['airline_code'] }}000{{ $res['user']['user_id'] }}</a></td>
-                                            <td>{{ $res['user']['name'] }}</td>
-                                            <td>{{ $res['user']['curr_airport_id'] }}</td>
+                                            <td><a href="{{ route('frontend.users.show.public', [$res['user_id']]) }}">{{ $res['ident'] }}</a></td>
+                                            <td>{{ $res['name'] }}</td>
+                                            <td>{{ $res['curr_airport_id'] }}</td>
                                             <td class="text-success">{{ money($res['total_balance'], $curr_unit) }}</td>
                                         </tr>
                                     @endforeach                            
                                 @endif
-
-
                         </tbody>
                     </table>
                 </div>
@@ -544,7 +570,7 @@
             <div class="card col-md-6 col-lg-6">
                 <div class="card-header mt-3 mb-3">Week {{ $Week }} of {{ $Month }}, {{ $Year }}</div>
                 <div class="card-body">
-                    <table class="table table-bordered">
+                    <table class="table mt-3">
                         <thead>
                             <tr>
                                 <th>Rank</th>
@@ -556,14 +582,16 @@
                         </thead>
                         <tbody>
                                 @if(!$resultbrWeek)
-                                <tr><td colspan="3" align="center">No Records Found</td></tr>
+
+                                    <tr><td colspan="5" align="center">No Records Found</td></tr>
+
                                 @else 
                                     @foreach($resultbrWeek as $res)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td><a href="{{ route('frontend.users.show.public', [$res['user']['user_id']]) }}">{{ $res['user']['airline_code'] }}000{{ $res['user']['user_id'] }}</a></td>
-                                            <td>{{ $res['user']['name'] }}</td>
-                                            <td>{{ $res['user']['curr_airport_id'] }}</td>
+                                            <td><a href="{{ route('frontend.users.show.public', [$res['user_id']]) }}">{{ $res['ident'] }}</a></td>
+                                            <td>{{ $res['name'] }}</td>
+                                            <td>{{ $res['curr_airport_id'] }}</td>
                                             <td class="text-success">{{ money($res['total_balance'], $curr_unit) }}</td>
                                         </tr>
                                     @endforeach                            
@@ -577,7 +605,7 @@
             <div class="card col-md-6 col-lg-6">
                 <div class="card-header mt-3 mb-3">In {{ $Month }}, {{ $Year }}</div>
                 <div class="card-body">
-                <table class="table table-bordered">
+                <table class="table mt-3">
                         <thead>
                             <tr>
                                 <th>Rank</th>
@@ -589,14 +617,16 @@
                         </thead>
                         <tbody>
                                 @if(!$resultbrMonth)
-                                <tr><td colspan="3" align="center">No Records Found</td></tr>
+
+                                    <tr><td colspan="5" align="center">No Records Found</td></tr>
+
                                 @else 
                                     @foreach($resultbrMonth as $res)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td><a href="{{ route('frontend.users.show.public', [$res['user']['user_id']]) }}">{{ $res['user']['airline_code'] }}000{{ $res['user']['user_id'] }}</a></td>
-                                            <td>{{ $res['user']['name'] }}</td>
-                                            <td>{{ $res['user']['curr_airport_id'] }}</td>
+                                            <td><a href="{{ route('frontend.users.show.public', [$res['user_id']]) }}">{{ $res['ident'] }}</a></td>
+                                            <td>{{ $res['name'] }}</td>
+                                            <td>{{ $res['curr_airport_id'] }}</td>
                                             <td class="text-success">{{ money($res['total_balance'], $curr_unit) }}</td>
                                         </tr>
                                     @endforeach                            
@@ -610,7 +640,7 @@
             <div class="card col-md-6 col-lg-6">
                 <div class="card-header mt-3 mb-3">This Year - {{ $Year }}</div>
                 <div class="card-body">
-                <table class="table table-bordered">
+                <table class="table mt-3">
                         <thead>
                             <tr>
                                 <th>Rank</th>
@@ -622,20 +652,20 @@
                         </thead>
                         <tbody>
                                 @if(!$resultbrYear)
-                                <tr><td colspan="3" align="center">No Records Found</td></tr>
+
+                                    <tr><td colspan="5" align="center">No Records Found</td></tr>
+
                                 @else 
                                     @foreach($resultbrYear as $res)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td><a href="{{ route('frontend.users.show.public', [$res['user']['user_id']]) }}">{{ $res['user']['airline_code'] }}000{{ $res['user']['user_id'] }}</a></td>
-                                            <td>{{ $res['user']['name'] }}</td>
-                                            <td>{{ $res['user']['curr_airport_id'] }}</td>
+                                            <td><a href="{{ route('frontend.users.show.public', [$res['user_id']]) }}">{{ $res['ident'] }}</a></td>
+                                            <td>{{ $res['name'] }}</td>
+                                            <td>{{ $res['curr_airport_id'] }}</td>
                                             <td class="text-success">{{ money($res['total_balance'], $curr_unit) }}</td>
                                         </tr>
                                     @endforeach                            
                                 @endif
-
-
                         </tbody>
                     </table>
                 </div>
@@ -643,7 +673,7 @@
             <div class="card col-md-12 col-lg-12">
                 <div class="card-header mt-3 mb-3">In {{ $LastYear }}</div>
                 <div class="card-body">
-                    <table class="table table-bordered">
+                    <table class="table mt-3">
                         <thead>
                             <tr>
                                 <th>Rank</th>
@@ -655,20 +685,20 @@
                         </thead>
                         <tbody>
                                 @if(!$resultbrLastYear)
-                                <tr><td colspan="3" align="center">No Records Found</td></tr>
+
+                                    <tr><td colspan="5" align="center">No Records Found</td></tr>
+
                                 @else 
                                     @foreach($resultbrLastYear as $res)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td><a href="{{ route('frontend.users.show.public', [$res['user']['user_id']]) }}">{{ $res['user']['airline_code'] }}000{{ $res['user']['user_id'] }}</a></td>
-                                            <td>{{ $res['user']['name'] }}</td>
-                                            <td>{{ $res['user']['curr_airport_id'] }}</td>
+                                            <td><a href="{{ route('frontend.users.show.public', [$res['user_id']]) }}">{{ $res['ident'] }}</a></td>
+                                            <td>{{ $res['name'] }}</td>
+                                            <td>{{ $res['curr_airport_id'] }}</td>
                                             <td class="text-success">{{ money($res['total_balance'], $curr_unit) }}</td>
                                         </tr>
                                     @endforeach                            
                                 @endif
-
-
                         </tbody>
                     </table>
                 </div>
