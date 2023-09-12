@@ -45,7 +45,7 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                                 <td>{{ $res->user->name_private }}</td>
-                                                <td>{{ $res->user->curr_airport_id }}</td>
+                                                <td><a  href="{{ route('frontend.airports.show', [$res->user->curr_airport_id]) }}">{{ $res->user->curr_airport_id }}</a></td>
                                                 <td class="text-success">@minutestotime($res->totaltime)</td>
                                             </tr>
                                     @endforeach
@@ -78,7 +78,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                         <td>{{ $res->user->name_private }}</td>
-                                        <td>{{ $res->user->curr_airport_id }}</td>
+                                        <td><a  href="{{ route('frontend.airports.show', [$res->user->curr_airport_id]) }}">{{ $res->user->curr_airport_id }}</a></td>
                                         <td class="text-success">@minutestotime($res->totaltime)</td>
                                     </tr>
                                 @endforeach
@@ -111,7 +111,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                         <td>{{ $res->user->name_private }}</td>
-                                        <td>{{ $res->user->curr_airport_id }}</td>
+                                        <td><a  href="{{ route('frontend.airports.show', [$res->user->curr_airport_id]) }}">{{ $res->user->curr_airport_id }}</a></td>
                                         <td class="text-success">@minutestotime($res->totaltime)</td>
                                     </tr>
                                 @endforeach
@@ -142,7 +142,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                         <td>{{ $res->user->name_private }}</td>
-                                        <td>{{ $res->user->curr_airport_id }}</td>
+                                        <td><a  href="{{ route('frontend.airports.show', [$res->user->curr_airport_id]) }}">{{ $res->user->curr_airport_id }}</a></td>
                                         <td class="text-success">@minutestotime($res->totaltime)</td>
                                     </tr>
                                 @endforeach                            
@@ -177,7 +177,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                         <td>{{ $res->user->name_private }}</td>
-                                        <td>{{ $res->user->curr_airport_id }}</td>
+                                        <td><a  href="{{ route('frontend.airports.show', [$res->user->curr_airport_id]) }}">{{ $res->user->curr_airport_id }}</a></td>
                                         <td class="text-success">@minutestotime($res->totaltime)</td>
                                     </tr>
                                 @endforeach                            
@@ -218,7 +218,7 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                             <td>{{ $res->user->name_private }}</td>
-                                            <td>{{ $res->user->curr_airport_id }}</td>
+                                            <td><a  href="{{ route('frontend.airports.show', [$res->user->curr_airport_id]) }}">{{ $res->user->curr_airport_id }}</a></td>
                                             <td class="text-success">{{ floor($res->totaldistance) }} NM</td>
                                         </tr>
                                     @endforeach                            
@@ -251,7 +251,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                         <td>{{ $res->user->name_private }}</td>
-                                        <td>{{ $res->user->curr_airport_id }}</td>
+                                        <td><a  href="{{ route('frontend.airports.show', [$res->user->curr_airport_id]) }}">{{ $res->user->curr_airport_id }}</a></td>
                                         <td class="text-success">{{ floor($res->totaldistance) }} NM</td>
                                     </tr>
                                 @endforeach                            
@@ -284,7 +284,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                         <td>{{ $res->user->name_private }}</td>
-                                        <td>{{ $res->user->curr_airport_id }}</td>
+                                        <td><a  href="{{ route('frontend.airports.show', [$res->user->curr_airport_id]) }}">{{ $res->user->curr_airport_id }}</a></td>
                                         <td class="text-success">{{ floor($res->totaldistance) }} NM</td>
                                     </tr>
                                 @endforeach
@@ -317,7 +317,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                         <td>{{ $res->user->name_private }}</td>
-                                        <td>{{ $res->user->curr_airport_id }}</td>                              
+                                        <td><a  href="{{ route('frontend.airports.show', [$res->user->curr_airport_id]) }}">{{ $res->user->curr_airport_id }}</a></td>                              
                                         <td class="text-success">{{ floor($res->totaldistance) }} NM</td>
                                     </tr>
                                 @endforeach                            
@@ -348,7 +348,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                         <td>{{ $res->user->name_private }}</td>
-                                        <td>{{ $res->user->curr_airport_id }}</td>
+                                        <td><a  href="{{ route('frontend.airports.show', [$res->user->curr_airport_id]) }}">{{ $res->user->curr_airport_id }}</a></td>
                                         <td class="text-success">{{ floor($res->totaldistance) }} NM</td>
                                     </tr>
                                 @endforeach                            
@@ -389,7 +389,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                         <td>{{ $res->user->name_private }}</td>
-                                        <td>{{ $res->user->curr_airport_id }}</td>
+                                        <td><a  href="{{ route('frontend.airports.show', [$res->user->curr_airport_id]) }}">{{ $res->user->curr_airport_id }}</a></td>
                                         <td class="text-success">{{ floor($res->landing_rate) }} fps</td>
                                     </tr>
                                 @endforeach                            
@@ -422,7 +422,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                         <td>{{ $res->user->name_private }}</td>
-                                        <td>{{ $res->user->curr_airport_id }}</td>
+                                        <td><a  href="{{ route('frontend.airports.show', [$res->user->curr_airport_id]) }}">{{ $res->user->curr_airport_id }}</a></td>
                                         <td class="text-success">{{ floor($res->landing_rate) }} fps</td>
                                     </tr>
                                 @endforeach                            
@@ -455,7 +455,7 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                             <td>{{ $res->user->name_private }}</td>
-                                            <td>{{ $res->user->curr_airport_id }}</td>
+                                            <td><a  href="{{ route('frontend.airports.show', [$res->user->curr_airport_id]) }}">{{ $res->user->curr_airport_id }}</a></td>
                                             <td class="text-success">{{ floor($res->landing_rate) }} fps</td>
                                         </tr>
                                     @endforeach                            
@@ -488,7 +488,7 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                             <td>{{ $res->user->name_private }}</td>
-                                            <td>{{ $res->user->curr_airport_id }}</td>
+                                            <td><a  href="{{ route('frontend.airports.show', [$res->user->curr_airport_id]) }}">{{ $res->user->curr_airport_id }}</a></td>
                                             <td class="text-success">{{ floor($res->landing_rate) }} fps</td>
                                         </tr>
                                     @endforeach                            
@@ -521,7 +521,7 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td><a href="{{ route('frontend.users.show.public', [$res->user->id]) }}">{{$res->user->ident}}</a></td>
                                             <td>{{ $res->user->name_private }}</td>
-                                            <td>{{ $res->user->curr_airport_id }}</td>
+                                            <td><a  href="{{ route('frontend.airports.show', [$res->user->curr_airport_id]) }}">{{ $res->user->curr_airport_id }}</a></td>
                                             <td class="text-success">{{ floor($res->landing_rate) }} fps</td>
                                         </tr>
                                     @endforeach                            
@@ -558,7 +558,7 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td><a href="{{ route('frontend.users.show.public', [$res['user_id']]) }}">{{ $res['ident'] }}</a></td>
                                             <td>{{ $res['name'] }}</td>
-                                            <td>{{ $res['curr_airport_id'] }}</td>
+                                            <td><a  href="{{ route('frontend.airports.show', [$res->curr_airport_id]) }}"><a  href="{{ route('frontend.airports.show', [$res['curr_airport_id']]) }}">{{ $res['curr_airport_id'] }}</a></a></td>
                                             <td class="text-success">{{ money($res['total_balance'], $curr_unit) }}</td>
                                         </tr>
                                     @endforeach                            
@@ -591,7 +591,7 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td><a href="{{ route('frontend.users.show.public', [$res['user_id']]) }}">{{ $res['ident'] }}</a></td>
                                             <td>{{ $res['name'] }}</td>
-                                            <td>{{ $res['curr_airport_id'] }}</td>
+                                            <td><a  href="{{ route('frontend.airports.show', [$res['curr_airport_id']]) }}">{{ $res['curr_airport_id'] }}</a></td>
                                             <td class="text-success">{{ money($res['total_balance'], $curr_unit) }}</td>
                                         </tr>
                                     @endforeach                            
@@ -626,7 +626,7 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td><a href="{{ route('frontend.users.show.public', [$res['user_id']]) }}">{{ $res['ident'] }}</a></td>
                                             <td>{{ $res['name'] }}</td>
-                                            <td>{{ $res['curr_airport_id'] }}</td>
+                                            <td><a  href="{{ route('frontend.airports.show', [$res['curr_airport_id']]) }}">{{ $res['curr_airport_id'] }}</a></td>
                                             <td class="text-success">{{ money($res['total_balance'], $curr_unit) }}</td>
                                         </tr>
                                     @endforeach                            
@@ -661,7 +661,7 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td><a href="{{ route('frontend.users.show.public', [$res['user_id']]) }}">{{ $res['ident'] }}</a></td>
                                             <td>{{ $res['name'] }}</td>
-                                            <td>{{ $res['curr_airport_id'] }}</td>
+                                            <td><a  href="{{ route('frontend.airports.show', [$res['curr_airport_id']]) }}">{{ $res['curr_airport_id'] }}</a></td>
                                             <td class="text-success">{{ money($res['total_balance'], $curr_unit) }}</td>
                                         </tr>
                                     @endforeach                            
@@ -694,7 +694,7 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td><a href="{{ route('frontend.users.show.public', [$res['user_id']]) }}">{{ $res['ident'] }}</a></td>
                                             <td>{{ $res['name'] }}</td>
-                                            <td>{{ $res['curr_airport_id'] }}</td>
+                                            <td><a  href="{{ route('frontend.airports.show', [$res['curr_airport_id']]) }}">{{ $res['curr_airport_id'] }}</a></td>
                                             <td class="text-success">{{ money($res['total_balance'], $curr_unit) }}</td>
                                         </tr>
                                     @endforeach                            
