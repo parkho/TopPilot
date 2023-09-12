@@ -18,6 +18,6 @@ jobs:
     - name: Upload Release
       uses: ncipollo/release-action@v1
       with:
-        name: 'Top Pilot'
+        name: 'TopPilot'
         artifacts: "../TopPilot.zip"
         token: ${{ secrets.GITHUB_TOKEN }} 
